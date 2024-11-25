@@ -6,6 +6,11 @@
   font-family: roboto;
 }
 
+body{
+background: rgb(148,187,233);
+background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(233,188,230,1) 25%,rgba(233,188,230,1) 75%, rgba(148,187,233,1) 100%);
+}
+
 .bold{
   font-weight: bold;
 }
@@ -53,15 +58,14 @@
 
 #header {
   width: 100%;
-  height: 100vh;
+ height:100vh ;
 }
 
 #header-video {
   position: fixed;
   z-index: -3;
   right: 0;
-  bottom: 0;
-
+	top: 0;
 }
 
 nav {
@@ -98,14 +102,13 @@ nav {
 #title {
 	display: flex;
 	align-items: end;
-	width: 100%;
- height: 46.21%;
+	height: 46.21%;
 }
 
 #title h1 {
 	padding-left: 1rem;
   color: whitesmoke;   
-	font-size: 8rem; 
+	font-size: 20vh; 
   font-family: Doto;
   animation: neonize 1s ease-in-out infinite alternate;
 }
@@ -125,6 +128,13 @@ nav {
   font-size: 1.25rem;
 }
 
+@media only screen and (max-width:1250px) {
+	#header-video {
+		width: auto;
+		height: 100%;
+	}
+}
+
 @media only screen and (max-width:860px) {
 	#logo {
 		display: none;
@@ -141,6 +151,30 @@ nav {
 	}
 }
 
+@media only screen and (max-width:425px) {
+	#header{
+		height: 100vh;
+	}
+	#header-video {
+		width: ;
+		position: fixed;
+		right: 0;
+	}
+	nav{
+		display: none;
+	}
+	#speech  p{
+		font-size: 3vw;
+	
+	}
+	#title h1 {
+		position: absolute;
+		top:25vh;
+		z-index: 5;
+		font-size: 20vw;
+	}
+}
+
 
 /* ---Main---*/
 
@@ -148,7 +182,6 @@ nav {
 #main{
   width: 100%;
   height: 100%;
-  margin-top: auto;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   background-color: #ebbce656;
@@ -212,20 +245,30 @@ margin-top: 5rem;
   padding:1rem;
   height: 10rem;
   width:10rem;
-  align-self: center;
   border-radius: 20px;
 }
 
 .specialists p {
   text-align: justify;
 }
+/*  Break point pour entourer l'img avec le texte */
+
+@media only screen and (max-width:1250px) {
+img {
+	float: left;
+}
+.specialists {
+	display: block;
+	}
+} 
+
+
+
 
 @media only screen and (max-width:860px){
-	#presentation img {
-		display: none;
-	}
 	#main {
 		display: block;
+		flex-wrap: wrap;
 	}
 	#presentation {
 		width: 100%;
@@ -244,7 +287,7 @@ margin-top: 5rem;
 	width: 100%;
   height: 40rem;
 	padding-top: 10rem;
-  background-color: #ebbce656;
+  background-color: #ebbce632;
   background: linear-gradient(180deg, rgba(235,188,230,0.34) 0%, rgba(0,0,0,1) 50%);  
   color: whitesmoke;
   display: flex;
